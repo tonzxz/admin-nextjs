@@ -4,8 +4,8 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 240, 240, 240;
+  --background-end-rgb: 240, 240, 240;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,3 +25,53 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+    /* animation-timing-function: cubic-bezier(0.8, 2, 1, 1); */
+  }
+  50% {
+    transform: translateY(-30%);
+    /* animation-timing-function: cubic-bezier(0, 0, 0.2, 1); */
+  }
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 3s ease-in-out infinite;
+}
+
+.animate-spin {
+  animation: spin 3s linear infinite;
+}
+
+
+.logo {
+
+  will-change: filter;
+  transition: filter 100ms;
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #454effaa);
+}
+.logo.typescript:hover {
+  filter: drop-shadow(0 0 2em #0e4afeaa);
+}
+.logo.tailwind:hover {
+  filter: drop-shadow(0 0 2em #01c8ffe8);
+}
+.logo.next:hover {
+  filter: drop-shadow(0 0 2em #000000aa);
+}
+
